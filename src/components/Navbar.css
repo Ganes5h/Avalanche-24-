@@ -1,0 +1,183 @@
+.arc {
+    box-sizing: border-box;
+    width: 100vw; /* Full width of the viewport */
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+    transition: transform 0.5s ease;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+.arc > * {
+    position: relative;
+    width: 180px; /* Adjust width for better spacing */
+    height: 2rem;
+}
+
+.button-text {
+    position: absolute;
+    left: 50%; /* Center text in the button */
+    top: 0;
+    transform: translateX(-50%); /* Adjust for centering */
+    white-space: nowrap;
+    padding-left: 10px;
+    overflow: visible;
+}
+
+.nav-button {
+    color: #a1dfff;
+    font-family: 'SilkScreen';
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Wide V shape styling */
+.nav-button:nth-child(1) {
+    transform: translateY(-180%); /* Move left */
+}
+
+.nav-button:nth-child(2) {
+    transform: translateY(-90%); /* Move slightly left */
+}
+
+.nav-button:nth-child(3) {
+    transform: translateX(0%); /* Center */
+}
+
+.nav-button:nth-child(4) {
+    transform: translateY(-90%); /* Move slightly right */
+}
+
+.nav-button:nth-child(5) {
+    transform: translateY(-180%); /* Move right */
+}
+
+.nav-button.active {
+    color: #ff0; /* Change color for active button */
+}
+
+/* Underline effect for active button */
+.nav-button.active::after {
+    content: ''; /* Use underscores for the underline */
+    position: absolute;
+    left: 50%; /* Center the underline */
+    bottom: -5px; /* Position it slightly below the button */
+    transform: translateX(-50%); /* Center the underline */
+    font-size: 0.8rem; /* Adjust size as needed */
+    color: #FCEE0A; /* Same color as active button */
+}
+
+/* Hover effect */
+.nav-button:hover {
+    color: #FCEE0A; 
+    text-shadow: 
+        0 0 8px #FCEE0A,
+        0 0 12px #FCEE0A,
+        0 0 18px #FCEE0A,
+        0 0 25px rgba(255, 255, 180, 0.5), 
+        0 0 35px rgba(255, 255, 180, 0.4),
+        0 0 50px rgba(209, 249, 255, 0.4); 
+}
+
+/* Optional: Handle text overflow gracefully on small screens */
+@media (max-width: 600px) {
+    .button-text {
+        font-size: 0.7rem; 
+        font-weight: bold;
+    }
+}
+
+.navbar {
+    font-family:'Silkscreen';
+    margin-top: 50px;
+    z-index: 4;
+    display: block;
+    position: static;
+    top: 0px;
+    right: 0px;
+}
+/* Navbar styling */
+.navbar {
+    position: relative;
+    margin-top: 50px;
+    z-index: 4; /* Adjusted to allow for layering */
+    display: block;
+}
+
+/* Hamburger icon on the left */
+.navbar .MuiIconButton-root {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Highest z-index to keep it visible */
+}
+
+/* Hide the arc container on small screens */
+@media (max-width: 900px) {
+    .arc {
+        display: none;
+    }
+}
+
+/* Center the navbar on larger screens */
+@media (min-width: 900px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.navbar {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-top: 50px;
+}
+
+.menu-button {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    z-index: 1100 !important;
+    color: white !important;
+    display: none !important;
+}
+
+.arc {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+/* Rest of your existing .arc styles remain the same */
+
+@media (max-width: 900px) {
+    .menu-button {
+        display: block !important;
+    }
+
+    .arc {
+        display: none;
+    }
+
+    .navbar {
+        height: 0;
+        margin: 0;
+        overflow: visible;
+    }
+}
+
+/* Rest of your existing styles remain the same */
